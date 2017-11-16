@@ -12,17 +12,16 @@ public class Invoker {
 
     public AssetDetails addAsset(String descript, double value){
         CMDAddAsset addAsset = new CMDAddAsset(descript, value, aggregator);
-        addAsset.execute();
-
+        return addAsset.execute();
     }
 
     public LiabilityDetails addLiability(String descript, double value){
         CMDAddLiability addLiability = new CMDAddLiability(descript, value, aggregator);
-        addLiability.execute();
+        return addLiability.execute();
     }
 
-    public NetWorthDetails getNetWorth(){
-        CMDGetNetWorth getNetWorth = new CMDGetNetWorth();
-        getNetWorth.execute();
+    public NetWorthDetails getNetWorth(Assets assets, Liabilities liabilities){
+        CMDGetNetWorth getNetWorth = new CMDGetNetWorth(assets, liabilities);
+        return getNetWorth.execute();
     }
 }
