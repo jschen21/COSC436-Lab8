@@ -6,16 +6,13 @@ import java.util.ArrayList;
  * Created by jchen21 on 11/9/2017.
  */
 public class Aggregator {
-    private ArrayList<Assets> total_assets;
-    private ArrayList<Liabilities> total_liabilities;
+    private Assets total_assets = new Assets();
+    private Liabilities total_liabilities = new Liabilities();
 
-    public Create(){
-        total_assets = new ArrayList<>();
-        total_liabilities = new ArrayList<>()
-    }
-
-    public ArrayList<Assets> getAssets(){
+    public Assets getAssets(){
         return total_assets;
     }
-
+    public Liabilities getLiabilities(){
+        return total_liabilities;
+    }
 }
